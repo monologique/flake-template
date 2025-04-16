@@ -1,0 +1,14 @@
+[formatter.nix]
+command = "nixfmt"
+includes = ["*.nix"]
+priority = 1
+
+[formatter.prettier]
+command = "prettier"
+options = ["-w"]
+includes = ["*.md"]
+
+[formatter.taplo]
+command = "taplo"
+options = ["fmt"]
+includes = ["*.toml"]

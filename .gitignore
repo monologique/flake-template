@@ -1,0 +1,7 @@
+.cache
+.direnv
+.devenv
+.DS_Store
+.pre-commit-config.yaml
+build
+result
