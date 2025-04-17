@@ -107,6 +107,7 @@
                     ];
                   };
                   # Lint
+                  actionlint.enable = true;
                   flake-checker.enable = true;
                   deadnix.enable = true;
                   yamllint.enable = true;

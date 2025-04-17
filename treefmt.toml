@@ -1,3 +1,5 @@
+excludes = [".envrc", ".gitignore", "LICENSE", "*.lock"]
+
 [formatter.nix]
 command = "nixfmt"
 includes = ["*.nix"]
@@ -15,4 +17,10 @@ includes = ["*.toml"]
 
 [formatter.yamlfmt]
 command = "yamlfmt"
-includes = ["*yaml", "*.yml"]
+includes = [
+  "*.yaml",
+  "*.yml",
+  ".yamllint",
+  ".github/workflows/*.yaml",
+  ".github/workflows/*.yml",
+]
