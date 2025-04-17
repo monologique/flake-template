@@ -87,7 +87,9 @@
 
             modules = [
               {
-                packages = [ self.packages.${system}.default ];
+                packages = with pkgs; [
+                  yaml-language-server
+                ];
 
                 enterShell = ''
                   echo "Hello!"
@@ -101,11 +103,13 @@
                       nixfmt-rfc-style
                       nodePackages.prettier
                       taplo
+                      yamlfmt
                     ];
                   };
                   # Lint
                   flake-checker.enable = true;
                   deadnix.enable = true;
+                  yamllint.enable = true;
                 };
 
                 processes.${pname}.exec = self.apps.${system}.default.program;
