@@ -98,6 +98,7 @@
                 git-hooks.hooks = {
                   # Formatting
                   treefmt = {
+                    name = "treefmt";
                     enable = true;
                     settings.formatters = with pkgs; [
                       nixfmt-rfc-style
