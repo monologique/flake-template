@@ -13,9 +13,13 @@ jobs:
       - uses: cachix/install-nix-action@v29
         with:
           name: devenv
+      - name: Install devenv.sh
+        run: nix profile install nixpkgs#devenv
       - name: Test Bash Shell with Local and External Flakes
         uses: workflow/nix-shell-action@v3
         with:
           script: |
             pwd
             nix run .#
+            which devenv
+            devenv test
