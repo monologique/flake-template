@@ -1,0 +1,26 @@
+excludes = [".envrc", ".gitignore", "LICENSE", "*.lock"]
+
+[formatter.nix]
+command = "nixfmt"
+includes = ["*.nix"]
+
+
+[formatter.taplo]
+command = "taplo"
+options = ["fmt"]
+includes = ["*.toml"]
+
+[formatter.yamlfmt]
+command = "yamlfmt"
+includes = [
+  "*.yaml",
+  "*.yml",
+  ".yamllint",
+  ".github/workflows/*.yaml",
+  ".github/workflows/*.yml",
+]
+
+[formatter.prettier]
+command = "prettier"
+options = ["-w"]
+includes = ["*.md"]
