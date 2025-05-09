@@ -27,15 +27,13 @@ A minimal yet powerful foundation for creating Nix flake templates. Perfect for 
 
 ```bash
 # In the current directory
-nix flake init -t github:monologique/nix-flake-template
+nix flake init -t github:monologique/templates#flake
 
 # In a new directory
-nix flake new my-new-template -t github:monologique/nix-flake-template
+nix flake new my-new-template -t github:monologique/templates#flake
 ```
 
 2. Activate development environment
-
-> Note: direnv will automatically load the environment when entering the directory
 
 ```bash
 # Without direnv
@@ -58,23 +56,23 @@ direnv allow
 1. Add to your Nix registry
 
 ```bash
-nix registry add monologique-dune github:monologique/nix-flake-template
+nix registry add monologique github:monologique/templates
 ```
 
 2. Initialize the template
 
 ```bash
 # In the current directory
-nix flake init -t monologique-dune
+nix flake init -t monologique#flake
 
 # In a new directory
-nix flake new /tmp/project-directory -t monologique-dune
+nix flake new /tmp/project-directory -t monologique#flake
 ```
 
 ## Contributing
 
 PRs welcome! Please:
 
-1. Test with `--no-pure-eval` flags
-2. Maintain existing formatting standards (nix fmt)
+1. Open ticket in the [main repository](https://github.com/monologique/templates)
+2. Maintain existing formatting standards (nix flake check)
 3. Update documentation accordingly
